@@ -68,7 +68,8 @@ user_rating_sds %>%
    theme(axis.text.x=element_blank())
 
 
- # add color by grouping the data
+# group the standard deviations into categories and use the 
+# categories as color for the scatterplot
 user_rating_sds <- user_rating_sds %>% 
   mutate(deviation=ifelse(sd==0, "no_variation", "high_variation")) %>%
   mutate(deviation=ifelse(sd > 0 & sd <=0.5, "low_variation", deviation)) %>% 
@@ -82,9 +83,8 @@ user_rating_sds <- user_rating_sds %>%
 dev.new()
 user_rating_sds %>% ggplot(aes(x=factor(userId), y=sd)) + 
   geom_point(aes(color=deviation))+ 
-  scale_color_manual(values = c("#E41A1C", "#FEB24C", "#4DAF4A", "#386CB0")) +
+  scale_color_manual(values = c("#e41a1c", "#fed98e", "#31a354", "#de2d26")) +
   labs(title = chart_title) +
   ylab(y_axis_label) + xlab("users") +
   theme(axis.text.x=element_blank())
-
 
