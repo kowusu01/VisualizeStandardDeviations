@@ -81,8 +81,9 @@ user_rating_sds <- user_rating_sds %>%
                                                    "no_variation" )))
 
 dev.new()
-user_rating_sds %>% ggplot(aes(x=factor(userId), y=sd)) + 
-  geom_point(aes(color=deviation))+ 
+user_rating_sds %>% 
+  ggplot(aes(x=factor(userId), y=sd)) + 
+  geom_point(aes(color=deviation)) + 
   scale_color_manual(values = c("#e41a1c", "#fed98e", "#31a354", "#de2d26")) +
   labs(title = chart_title) +
   ylab(y_axis_label) + xlab("users") +
