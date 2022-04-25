@@ -6,9 +6,12 @@
 # load libraries
 if(!require(tidyverse)) install.packages("tidyverse")
 if(!require(RColorBrewer)) install.packages("RColorBrewer")
+if(!require(kableExtra)) install.packages("kableExtra")
 
 library(ggplot2)
 library(RColorBrewer)
+library(kableExtra)
+
 
 # set set to ensure reproducibility
 set.seed(1) 
@@ -40,11 +43,21 @@ if(!file.exists(local_path))
 # load the data into memory
 movielens_ratings <- readRDS(local_path)
 
+movielens_ratings[ sample(nrow(movielens_ratings), 25), ] %>% 
+  kbl(booktabs = T, caption = "sample user ratings") %>%
+  kable_styling(latex_options = c("striped", "hold_position")) 
+
+
 # we start by calculating standard deviations for each user's ratings
 user_rating_sds <- movielens_ratings %>% 
   group_by(userId) %>% 
-  summarise(n=n(), sd=sd(rating)) %>%
+  summarise(number_of_ratings=n(), sd=sd(rating)) %>%
   arrange(desc(sd))
+
+user_rating_sds[ sample(nrow(user_rating_sds), 20), ] %>% 
+  kbl(booktabs = T, caption = "sample standard deviations in user ratings") %>%
+  kable_styling(latex_options = c("striped", "hold_position")) 
+
 
 # see users and the standard deviation in their ratings
 user_rating_sds %>% select(userId, sd) %>% arrange(sd)
