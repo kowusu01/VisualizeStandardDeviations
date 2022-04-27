@@ -1,0 +1,54 @@
+Visualizing variations in user ratings in the movielens dataset
+
+Imagine as an online store discovering that some customers come to your site to purchase the same item, every time.
+
+What if you knew that those customers were elderly citizens having difficulty with the use of technology, will it be worth implementing a 1-click purchase feature for them? Well, first you have to know if those customers actually exist.
+
+Code Repository:
+The entire code and the dataset for this article can be found at:
+- Code: github.com/kowusu01/VisualizeStandardDeviations
+- Dataset: github.com/kowusu01/TransformedDatasets/tree/main/movielens/rda
+
+Discovering insights
+Discovering insights in data can be a daunting task. As a beginner, you often don’t know where to start. But an insight does not necessary mean something no one has ever thought about; rather an insight can be something you never thought existed.
+
+In this tutorial, I use the public movielens dataset and explore the variations in the user ratings and attempt to find out if there are some users who give the same rating all the time.
+
+Background of the data
+The movielens dataset contains information about movie ratings. In the dataset, we have a set of users providing ratings for movies they have watched. Each user has rated one or more movies.
+This dataset is one of the most commonly used datasets in machine learning recommendation systems where an algorithm is used to predict user ratings based on the existing ratings.
+
+Here my objective is not to make predictions, rather to show the variations in the users’ ratings and determine if some users are giving the same ratings.
+For instance, are there users who seem to hate every movie and gives a 1-star rating to every movie? Similarly, are there any users who always give a 5 to every movie?
+The following is a sample of the ratings from the dataset.
+[image: sample user ratings]
+
+Approach
+We know that if a user gives the same rating to every movie, the standard deviation for that user’s ratings will be zero. The first step is to calculate the standard deviations for all user ratings in the dataset. A sample of the standard deviations are plotted using scatter plot. The following code snippets perform the task.
+
+First, we load the required libraries and download the dataset from GitHub repository. The dataset, movielens_ratings.rda, is an R .rda file and it’s hosted under my GitHub repo TransformedDatasets.
+[code: loading libraries and basic stuff]
+
+Next, we calculate the standard deviations for all the user ratings in the dataset.
+
+[code: compute standard deviations and create basic scatter plot]
+
+The following is a sample of the standard deviations.
+[image: sample standard deviations in user ratings]
+
+A basic scatter plot looks as below:
+[image: basic scatter plot of 50,000 user ratings]
+
+With this basic scatter plot, we can still see the pattern in variations in the ratings, but the visualization is surely not appealing. With a little bit of work, we can make the chart little easier to consume and hopefully impress our friends.
+
+With ggplot, we can change the aesthetics of the chart, e.g., the color, the size of the points, etc. Here I only make use of the color. I first group the standard deviations into categories; those with no variations (sd equals zero), those with low variations, medium, and high variations. I then carefully selected specific colors to create the impact.
+
+[code: categorize the standard deviations and create scatter plot with color code]
+[image: color coded scatter plot for standard deviations of user ratings]
+
+With this color coding, it becomes easier to convey the information. The majority of ratings lie between a standard deviation of 0.5 to 1.5. There is still a significant variation above 1.5, and of course, you can’t miss the dotted straight line at the bottom; the zero deviation ratings. These are the guys always giving same ratings regardless of what movie they watch!
+
+Conclusion
+With scatter plot and a simple use of color, the variations in the user ratings were revealed in a form of layers. The initial question, whether or not there are some users assigning the same rating for all movies was answered. Yes, indeed, there are such users in this dataset exhibiting that behavior. Even though not a significant number, it is important to note that the scenario does exist.
+
+Creating great visualizations does not require advance knowledge of ggplot charting tools. Often a basic one like scatter plot is enough; with a little enhancement with color, you can turn a basic chart into an impressive story point. I hope you enjoyed this article.
