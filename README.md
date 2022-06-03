@@ -3,11 +3,17 @@
 
 ![alt text](https://github.com/kowusu01/VisualizeStandardDeviations/blob/main/plot2.png?raw=true)
 
-## Imagine as an online store discovering that some customers come to your site to purchase the same item, every time.
+### Imagine as an online store discovering that some customers come to your site to purchase the same item, every time.
 
-## What if you knew that those customers were elderly citizens having difficulty with the use of technology, will it be worth implementing a 1-click purchase feature for them? Well, first you have to know if those customers actually exist. 
- 
- 
+### What if you knew that those customers were elderly citizens having difficulty with the use of technology, will it be worth implementing a 1-click purchase feature for them? Well, first you have to know if those customers actually exist. 
+
+
+
+### View my full article on this topic on Medium
+https://medium.com/@kowusu01/visualizing-variations-in-user-ratings-in-the-movielens-dataset-69e8dd8fab10
+
+
+### Discovering insights 
 Discovering insights in data can be a daunting task. As a beginner, often you don't know where to begin. But an insight does not necessary mean something no one has ever thought about; rather an insight can be something you never thought existed.
 You can start with a general question or a statement, then try to see if there are some instances in the data to support it? Most importantly, make use of an effective visualization to reveal the pattern.  
 
