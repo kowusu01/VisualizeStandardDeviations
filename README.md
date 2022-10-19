@@ -9,8 +9,7 @@
 
 
 
-### View my full article on this topic on Medium
-https://medium.com/@kowusu01/visualizing-variations-in-user-ratings-in-the-movielens-dataset-69e8dd8fab10
+[View my full article on this topic on Medium](https://medium.com/@kowusu01/visualizing-variations-in-user-ratings-in-the-movielens-dataset-69e8dd8fab10)
 
 
 ### Discovering insights 
@@ -24,3 +23,5 @@ In this simple project, I use the public movielens dataset and explore the varia
 With scatterplot and a simple use of color, the variations in the user ratings were revealed in a form of layers. The initial question, whether or not there are some users assigning the same rating for all movies was answered. Yes, indeed, there are such users in this dataset exhibiting that behavior. Even though not a significant number, it is important to note that the scenario does exist. 
 
 Creating great visualizations does not require advance knowledge of ggplot charting tools. Often a basic one like scatterplot is enough; with a little enhancement with color, one can turn a basic chart into an impressive story point.
+
+[View my full article on this topic on Medium](https://medium.com/@kowusu01/visualizing-variations-in-user-ratings-in-the-movielens-dataset-69e8dd8fab10)
